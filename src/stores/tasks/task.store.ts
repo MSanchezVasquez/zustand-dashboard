@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import type { Task, TaskStatus } from "../../interfaces";
 import { devtools } from "zustand/middleware";
 import { produce } from "immer";
+import { immer } from "zustand/middleware/immer";
 
 interface TaskState {
   dragginTaskId?: string;
@@ -16,7 +17,10 @@ interface TaskState {
   onTaskDrop: (status: TaskStatus) => void;
 }
 
-const storeApi: StateCreator<TaskState> = (set, get) => ({
+const storeApi: StateCreator<TaskState, [["zustand/immer", never]]> = (
+  set,
+  get
+) => ({
   dragginTaskId: undefined,
   tasks: {
     "ABC-1": { id: "ABC-1", title: "Task 1", status: "open" },
@@ -31,11 +35,9 @@ const storeApi: StateCreator<TaskState> = (set, get) => ({
   },
   addTask: (title: string, status: TaskStatus) => {
     const newTask = { id: uuidv4(), title, status };
-    set(
-      produce((state: TaskState) => {
-        state.tasks[newTask.id] = newTask;
-      })
-    );
+    set((state) => {
+      state.tasks[newTask.id] = newTask;
+    });
   },
 
   setDraggingTaskId: (taskId: string) => {
@@ -46,11 +48,9 @@ const storeApi: StateCreator<TaskState> = (set, get) => ({
   },
 
   changeTaskStatus: (taskId: string, status: TaskStatus) => {
-    set(
-      produce((state: TaskState) => {
-        state.tasks[taskId].status = status;
-      })
-    );
+    set((state) => {
+      state.tasks[taskId].status = status;
+    });
   },
   onTaskDrop: (status: TaskStatus) => {
     const taskId = get().dragginTaskId;
@@ -60,4 +60,4 @@ const storeApi: StateCreator<TaskState> = (set, get) => ({
   },
 });
 
-export const useTaskStore = create<TaskState>()(devtools(storeApi));
+export const useTaskStore = create<TaskState>()(devtools(immer(storeApi)));
