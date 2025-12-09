@@ -14,16 +14,11 @@ interface Actions {
   setLastName: (value: string) => void;
 }
 
-const storeApi: StateCreator<
-  PersonState & Actions,
-  [["zustand/devtools", never]]
-> = (set) => ({
+const storeApi: StateCreator<PersonState & Actions> = (set) => ({
   firstName: "",
   lastName: "",
-  setFirstName: (value: string) =>
-    set({ firstName: value }, false, "setFirstName"),
-  setLastName: (value: string) =>
-    set({ lastName: value }, false, "setLastName"),
+  setFirstName: (value: string) => set({ firstName: value }),
+  setLastName: (value: string) => set({ lastName: value }),
 });
 
 export const usePersonStore = create<PersonState & Actions>()(
