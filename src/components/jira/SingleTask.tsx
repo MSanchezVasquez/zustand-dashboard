@@ -16,13 +16,17 @@ export const SingleTask = ({ task }: Props) => {
       draggable
       onDragStart={() => setDraggingTaskId(task.id)}
       onDragEnd={() => removeDraggingTaskId()}
-      className="mt-5 flex items-center justify-between p-2"
+      className="bg-white p-4 mb-3 rounded-xl shadow-sm border border-slate-100 
+        hover:shadow-md hover:border-slate-200 cursor-grab active:cursor-grabbing
+        transition-all duration-200 ease-in-out flex items-center justify-between"
     >
-      <div className="flex items-center justify-center gap-2">
-        <p className="text-base font-bold text-navy-700">{task.title}</p>
+      <div className="flex items-center gap-3">
+        <p className="text-sm font-medium text-slate-700 leading-tight">
+          {task.title}
+        </p>
       </div>
-      <span className=" h-6 w-6 text-navy-700 cursor-pointer">
-        <IoReorderTwoOutline />
+      <span className="text-slate-400 hover:text-slate-600 transition-colors">
+        <IoReorderTwoOutline size={20} />
       </span>
     </div>
   );
