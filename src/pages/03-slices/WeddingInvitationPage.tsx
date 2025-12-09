@@ -37,150 +37,159 @@ export const WeddingInvitationPage = () => {
 
   return (
     <>
-      <h1>Invitación de Boda</h1>
-      <p>Zustand segmentado en slices</p>
-      <hr />
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-slate-900">
+          Invitación de Boda
+        </h1>
+        <p className="text-slate-500 mt-2 font-medium">
+          Zustand segmentado en slices (Person, Guest, Date).
+        </p>
+      </div>
+      <hr className="mb-8 border-slate-200" />
 
-      <WhiteCard className="flex items-center justify-center p-12">
-        <div className="mx-auto w-full max-w-[550px]">
-          <form onSubmit={onSubmit}>
-            <div className="-mx-3 flex flex-wrap">
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Primer Nombre
-                  </label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    placeholder="Primer Nombre"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* --- Lado Izquierdo: Formulario --- */}
+        <WhiteCard className="flex flex-col">
+          <h2 className="text-xl font-bold text-slate-800 mb-6">
+            Confirmación de Asistencia
+          </h2>
+
+          <form onSubmit={onSubmit} className="space-y-5">
+            {/* Nombres */}
+            <div className="flex gap-4">
+              <div className="w-1/2">
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
               </div>
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Apellido
-                  </label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    placeholder="Apellido"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                </div>
+              <div className="w-1/2">
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Apellido
+                </label>
+                <input
+                  type="text"
+                  placeholder="Tu apellido"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
               </div>
             </div>
-            <div className="mb-5">
-              <label className="mb-3 block text-base font-medium text-[#07074D]">
+
+            {/* Invitados */}
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">
                 ¿Cuántos invitados traerá?
               </label>
               <input
                 type="number"
-                name="guestNumber"
-                id="guestNumber"
-                placeholder="5"
+                placeholder="0"
                 min="0"
-                className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={guestCount}
                 onChange={(e) => setGuestCount(+e.target.value)}
               />
             </div>
 
-            <div className="-mx-3 flex flex-wrap">
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Fecha de evento
-                  </label>
-                  <input
-                    type="date"
-                    name="eventDate"
-                    id="eventDate"
-                    value={eventDate}
-                    onChange={(e) => setEventDate(e.target.value)}
-                  />
-                </div>
+            {/* Fecha y Hora */}
+            <div className="flex gap-4">
+              <div className="w-1/2">
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Fecha
+                </label>
+                <input
+                  type="date"
+                  value={eventDate}
+                  onChange={(e) => setEventDate(e.target.value)}
+                />
               </div>
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Hora del evento
-                  </label>
-                  <input
-                    type="time"
-                    name="eventTime"
-                    id="eventTime"
-                    value={eventTime}
-                    onChange={(e) => setEventTime(e.target.value)}
-                  />
-                </div>
+              <div className="w-1/2">
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Hora
+                </label>
+                <input
+                  type="time"
+                  value={eventTime}
+                  onChange={(e) => setEventTime(e.target.value)}
+                />
               </div>
             </div>
 
-            <div className="mb-5">
-              <label className="mb-3 block text-base font-medium text-[#07074D]">
-                ¿Tu también vendrás?
+            {/* Radio Buttons (Asistencia) */}
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-3">
+                ¿Asistirás?
               </label>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center">
+              <div className="flex gap-6">
+                <label className="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors w-full">
                   <input
                     type="radio"
                     name="isComing"
-                    id="radioButton1"
-                    className="h-5 w-5"
+                    className="w-5 h-5 text-indigo-600 focus:ring-indigo-500"
                     checked={isComing}
                     onChange={() => setIsComing(true)}
                   />
-                  <label className="pl-3 text-base font-medium text-[#07074D]">
-                    Si
-                  </label>
-                </div>
-                <div className="flex items-center">
+                  <span className="font-medium text-slate-700">Sí, iré</span>
+                </label>
+
+                <label className="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors w-full">
                   <input
                     type="radio"
                     name="isComing"
-                    id="radioButton2"
-                    className="h-5 w-5"
+                    className="w-5 h-5 text-indigo-600 focus:ring-indigo-500"
                     checked={!isComing}
                     onChange={() => setIsComing(false)}
                   />
-                  <label className="pl-3 text-base font-medium text-[#07074D]">
-                    No
-                  </label>
-                </div>
+                  <span className="font-medium text-slate-700">No puedo</span>
+                </label>
               </div>
             </div>
 
-            <div>
-              <button>Enviar</button>
+            <div className="pt-4">
+              <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-indigo-500/20 active:scale-[0.98]">
+                Enviar Confirmación
+              </button>
             </div>
           </form>
-        </div>
-      </WhiteCard>
+        </WhiteCard>
 
-      {/** Visualizador de estado para debugging */}
-      <WhiteCard className="mt-5">
-        <pre>
-          {JSON.stringify(
-            {
-              firstName,
-              lastName,
-              guestCount,
-              eventDate,
-              eventTime,
-              isComing,
-            },
-            null,
-            2
-          )}
-        </pre>
-      </WhiteCard>
+        {/* --- Lado Derecho: Terminal (Debug) --- */}
+        <div className="flex flex-col gap-6">
+          <WhiteCard className="flex flex-col !bg-slate-900 !border-slate-800 shadow-xl overflow-hidden h-full">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-white font-bold text-lg">
+                Estado Combinado (Debug)
+              </h2>
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+            </div>
+
+            <div className="bg-slate-950/50 rounded-xl p-6 font-mono border border-slate-800 relative flex-1">
+              <div className="absolute top-3 right-4 text-xs text-slate-500 font-bold opacity-50">
+                useWeddingStore
+              </div>
+              <pre className="text-emerald-400 text-sm leading-relaxed overflow-x-auto">
+                {JSON.stringify(
+                  {
+                    person: { firstName, lastName },
+                    guest: { guestCount, isComing },
+                    date: { eventDate, eventTime },
+                  },
+                  null,
+                  2
+                )}
+              </pre>
+            </div>
+          </WhiteCard>
+        </div>
+      </div>
     </>
   );
 };
