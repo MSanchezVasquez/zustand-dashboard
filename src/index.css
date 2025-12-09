@@ -44,12 +44,12 @@ button {
 
 /* Inputs Modernos */
 /* Quitamos el estilo por defecto y le damos un look más "SaaS" */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="date"],
-input[type="time"] {
+input:not(.swal2-input)[type="text"],
+input:not(.swal2-input)[type="password"],
+input:not(.swal2-input)[type="email"],
+input:not(.swal2-input)[type="number"],
+input:not(.swal2-input)[type="date"],
+input:not(.swal2-input)[type="time"] {
   @apply w-full border border-slate-200 rounded-xl py-3 px-4 text-slate-700 bg-white
   placeholder:text-slate-400
   focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 
