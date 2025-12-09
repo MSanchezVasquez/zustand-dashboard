@@ -6,51 +6,67 @@ export const PersonPage = () => {
   const lastName = usePersonStore((state) => state.lastName);
   const setFirstName = usePersonStore((state) => state.setFirstName);
   const setLastName = usePersonStore((state) => state.setLastName);
+
   return (
     <>
-      <h1>Persona</h1>
-      <p>
-        Información que se compartirá a otro store, Session Storage y Firebase
-      </p>
-      <hr />
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold text-slate-900">Perfil de Persona</h1>
+        <p className="text-slate-500 mt-2 font-medium">
+          Sincronización de estado con Session Storage y Firebase.
+        </p>
+      </div>
+      <hr className="mb-8 border-slate-200" />
 
-      <WhiteCard className="flex items-center justify-center p-12">
-        <div className="mx-auto w-full max-w-[550px]">
-          <form>
-            <div className="-mx-3 flex flex-wrap">
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    placeholder="Primer Nombre"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="w-full px-3 sm:w-1/2">
-                <div className="mb-5">
-                  <label className="mb-3 block text-base font-medium text-[#07074D]">
-                    Apellido
-                  </label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    placeholder="Apellido"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                </div>
-              </div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* --- Formulario --- */}
+        <WhiteCard className=" flex flex-col justify-center">
+          <h2 className="text-xl font-bold text-slate-800 mb-6">
+            Información General
+          </h2>
+          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">
+                Primer Nombre
+              </label>
+              <input
+                type="text"
+                placeholder="Ej. Edward"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
 
-            <pre className="bg-gray-200 p-5 rounded-[20px]">
+            <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">
+                Apellido
+              </label>
+              <input
+                type="text"
+                placeholder="Ej. Tompson"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+          </form>
+        </WhiteCard>
+
+        {/* --- Visualizador de Estado (Estilo Terminal) --- */}
+        <WhiteCard className="flex flex-col !bg-slate-900 !border-slate-800 shadow-xl overflow-hidden">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-white font-bold text-lg">Estado (Debug)</h2>
+            {/* Puntos de colores estilo ventana */}
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+          </div>
+
+          <div className="bg-slate-950/50 rounded-xl p-6 font-mono border border-slate-800 relative flex-1">
+            <div className="absolute top-3 right-4 text-xs text-slate-500 font-bold opacity-50">
+              store.person
+            </div>
+            <pre className="text-emerald-400 text-sm leading-relaxed overflow-x-auto">
               {JSON.stringify(
                 {
                   firstName,
@@ -60,9 +76,9 @@ export const PersonPage = () => {
                 2
               )}
             </pre>
-          </form>
-        </div>
-      </WhiteCard>
+          </div>
+        </WhiteCard>
+      </div>
     </>
   );
 };
