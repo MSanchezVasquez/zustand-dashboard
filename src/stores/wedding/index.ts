@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 import { createPersonSlice, PersonSlice } from "./person.slice";
 import { createGuestSlice, GuestSlice } from "./guest.slice";
@@ -9,9 +9,16 @@ import { createDateSlice, DateSlice } from "./date.slice";
 type ShareState = PersonSlice & GuestSlice & DateSlice;
 
 export const useWeddingStore = create<ShareState>()(
-  devtools((...a) => ({
-    ...createPersonSlice(...a),
-    ...createGuestSlice(...a),
-    ...createDateSlice(...a),
-  }))
+  devtools(
+    persist(
+      (...a) => ({
+        ...createPersonSlice(...a),
+        ...createGuestSlice(...a),
+        ...createDateSlice(...a),
+      }),
+      {
+        name: "wedding-storage",
+      }
+    )
+  )
 );
