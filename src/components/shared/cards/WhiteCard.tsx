@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 
 interface Props {
   children?: React.ReactNode;
@@ -6,15 +6,20 @@ interface Props {
   className?: string;
 }
 
-
-export const WhiteCard = ( { children, centered, className }: Props ) => {
+export const WhiteCard = ({ children, centered, className }: Props) => {
   return (
-    <div className={
-      classNames( 'bg-white border rounded-[20px] p-10 shadow-3xl shadow-shadow-500 w-full', className, {
-        'text-center': centered,
-        'flex flex-col items-center': centered
-      } ) }>
-      { children }
+    <div
+      className={classNames(
+        "bg-white rounded-2xl p-6 w-full",
+        "shadow-card hover:shadow-card-hover border border-transparent transition-all duration-300 ease-in-out",
+        className,
+        {
+          "text-center": centered,
+          "flex flex-col items-center": centered,
+        }
+      )}
+    >
+      {children}
     </div>
   );
 };
