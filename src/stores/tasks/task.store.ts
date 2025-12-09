@@ -9,6 +9,7 @@ interface TaskState {
   tasks: Record<string, Task>; //{[key: string]: Task}
   getTaskByStatus: (status: TaskStatus) => Task[];
   addTask: (title: string, status: TaskStatus) => void;
+  removeTask: (taskId: string) => void;
 
   setDraggingTaskId: (taskId: string) => void;
   removeDraggingTaskId: () => void;
@@ -36,6 +37,11 @@ const storeApi: StateCreator<TaskState, [["zustand/immer", never]]> = (
     const newTask = { id: uuidv4(), title, status };
     set((state) => {
       state.tasks[newTask.id] = newTask;
+    });
+  },
+  removeTask: (taskId: string) => {
+    set((state) => {
+      delete state.tasks[taskId];
     });
   },
 
