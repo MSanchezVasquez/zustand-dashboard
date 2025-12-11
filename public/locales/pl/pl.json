@@ -1,0 +1,76 @@
+{
+  "dashboard": {
+    "title": "Panel",
+    "subtitle": "Ogólny podgląd wszystkich stanów systemu.",
+
+    "totalBears": {
+      "label": "Razem Niedźwiedzi"
+    },
+
+    "person": {
+      "label": "Osoba",
+      "noName": "Brak Imienia"
+    },
+
+    "tasks": {
+      "label": "Aktywne Zadania"
+    },
+
+    "wedding": {
+      "label": "Wydarzenie Ślubne",
+      "comingSoon": "Wkrótce"
+    },
+
+    "user": {
+      "label": "Aktualny Użytkownik",
+      "unknown": "Nieznany"
+    }
+  },
+  "sideMenu": {
+    "dashboard": { "title": "Panel", "subTitle": "Wyświetl dane" },
+    "bears": { "title": "Niedźwiedzie", "subTitle": "Zarządzaj niedźwiedziami" },
+    "person": { "title": "Osoba", "subTitle": "Imię i nazwisko" },
+    "tasks": { "title": "Zadania", "subTitle": "Lista zadań" },
+    "wedding": { "title": "Ślub", "subTitle": "Goście weselni" },
+    "logoSubtitle": "Prosty menedżer stanu.",
+    "welcome": "Witamy",
+    "user": { "defaultName": "Użytkownik", "role": "Programista" },
+    "logout": "Wyloguj się"
+},  "wedding": {
+    "title": "Zaproszenie ślubne",
+    "desc": "Zustand podzielony na slices",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "guests": "Ilu gości przyprowadzisz?",
+    "eventDate": "Data wydarzenia",
+    "eventTime": "Godzina wydarzenia",
+    "coming": "Czy również przyjdziesz?",
+    "yes": "Tak",
+    "no": "Nie",
+    "submit": "Wyślij"
+  },"jira": {
+    "title": "Zadania",
+    "desc": "Zarządzanie stanem za pomocą obiektów Zustand",
+    "pending": "Oczekujące",
+    "inprogress": "W toku",
+    "done": "Zakończone"
+  },"person": {
+    "title": "Osoba",
+    "desc": "Informacje będą udostępniane innemu store, Session Storage i Firebase",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "firstNamePlaceholder": "Pierwsze imię",
+    "lastNamePlaceholder": "Nazwisko"
+  }, "bears": {
+    "title": "Licznik Niedźwiedzi",
+    "desc": "Proste zarządzanie stanem w Zustand",
+    "black": "Niedźwiedzie Czarne",
+    "polar": "Niedźwiedzie Polarne",
+    "panda": "Pandy",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Niedźwiedzie",
+    "doNothing": "Nic Nie Rób",
+    "addBear": "Dodaj Niedźwiedzia",
+    "clear": "Wyczyść Niedźwiedzie"
+  }}

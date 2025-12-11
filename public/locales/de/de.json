@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "title": "Übersicht",
+    "subtitle": "Allgemeine Übersicht über alle Systemzustände.",
+
+    "totalBears": {
+      "label": "Gesamtanzahl Bären"
+    },
+
+    "person": {
+      "label": "Person",
+      "noName": "Kein Name"
+    },
+
+    "tasks": {
+      "label": "Aktive Aufgaben"
+    },
+
+    "wedding": {
+      "label": "Hochzeitsereignis",
+      "comingSoon": "Kommt bald"
+    },
+
+    "user": {
+      "label": "Aktueller Benutzer",
+      "unknown": "Unbekannt"
+    }
+  },"sideMenu": {
+    "dashboard": { "title": "Dashboard", "subTitle": "Daten anzeigen" },
+    "bears": { "title": "Bären", "subTitle": "Bären verwalten" },
+    "person": { "title": "Person", "subTitle": "Name und Nachname" },
+    "tasks": { "title": "Aufgaben", "subTitle": "Aufgabenliste" },
+    "wedding": { "title": "Hochzeit", "subTitle": "Hochzeitsgäste" },
+    "logoSubtitle": "Einfacher Status-Manager.",
+    "welcome": "Willkommen",
+    "user": { "defaultName": "Benutzer", "role": "Entwickler" },
+    "logout": "Abmelden"
+  },  "wedding": {
+    "title": "Hochzeitseinladung",
+    "desc": "Zustand in Slices aufgeteilt",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "guests": "Wie viele Gäste bringst du mit?",
+    "eventDate": "Veranstaltungsdatum",
+    "eventTime": "Veranstaltungszeit",
+    "coming": "Wirst du auch kommen?",
+    "yes": "Ja",
+    "no": "Nein",
+    "submit": "Senden"
+  },  "jira": {
+    "title": "Aufgaben",
+    "desc": "Zustandsverwaltung mit Zustand-Objekten",
+    "pending": "Offen",
+    "inprogress": "In Arbeit",
+    "done": "Fertig"
+  }, "person": {
+    "title": "Person",
+    "desc": "Informationen werden mit einem anderen Store, Session Storage und Firebase geteilt",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "firstNamePlaceholder": "Vorname",
+    "lastNamePlaceholder": "Nachname"
+  }, "bears": {
+    "title": "Bärenzähler",
+    "desc": "Einfaches Zustand-Statemanagement",
+    "black": "Schwarzbären",
+    "polar": "Eisbären",
+    "panda": "Pandas",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Bären",
+    "doNothing": "Nichts tun",
+    "addBear": "Bär hinzufügen",
+    "clear": "Bären löschen"
+  }
+  
+}

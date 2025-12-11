@@ -1,0 +1,77 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Vista general de todos los estados del sistema.",
+
+    "totalBears": {
+      "label": "Total Osos"
+    },
+
+    "person": {
+      "label": "Persona",
+      "noName": "Sin Nombre"
+    },
+
+    "tasks": {
+      "label": "Tareas Activas"
+    },
+
+    "wedding": {
+      "label": "Evento Boda",
+      "comingSoon": "Próximamente"
+    },
+
+    "user": {
+      "label": "Usuario Actual",
+      "unknown": "Desconocido"
+    }
+  },"sideMenu": {
+    "dashboard": { "title": "Dashboard", "subTitle": "Visualizar datos" },
+    "bears": { "title": "Osos", "subTitle": "Gestor de osos" },
+    "person": { "title": "Persona", "subTitle": "Nombre y apellido" },
+    "tasks": { "title": "Tareas", "subTitle": "Lista de tareas" },
+    "wedding": { "title": "Boda", "subTitle": "Invitados de boda" },
+    "logoSubtitle": "Manejador de estado simple.",
+    "welcome": "Bienvenido",
+    "user": { "defaultName": "Usuario", "role": "Desarrollador" },
+    "logout": "Cerrar sesión"
+  },"wedding": {
+    "title": "Invitación de Boda",
+    "desc": "Zustand segmentado en slices",
+    "firstName": "Primer Nombre",
+    "lastName": "Apellido",
+    "guests": "¿Cuántos invitados traerá?",
+    "eventDate": "Fecha de evento",
+    "eventTime": "Hora del evento",
+    "coming": "¿Tú también vendrás?",
+    "yes": "Sí",
+    "no": "No",
+    "submit": "Enviar"
+  },"jira": {
+    "title": "Tareas",
+    "desc": "Manejo de estado con objetos de Zustand",
+    "pending": "Pendientes",
+    "inprogress": "Avanzando",
+    "done": "Terminadas"
+  },  "person": {
+    "title": "Persona",
+    "desc": "Información que se compartirá a otro store, Session Storage y Firebase",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "firstNamePlaceholder": "Primer Nombre",
+    "lastNamePlaceholder": "Apellido"
+  },"bears": {
+    "title": "Contador de Osos",
+    "desc": "Manejo de estado simple con Zustand",
+    "black": "Osos Negros",
+    "polar": "Osos Polares",
+    "panda": "Osos Panda",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Osos",
+    "doNothing": "No Hacer Nada",
+    "addBear": "Agregar Oso",
+    "clear": "Limpiar Osos"
+  }
+
+}

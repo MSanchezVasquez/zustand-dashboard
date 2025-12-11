@@ -11,6 +11,8 @@ import {
 import { NavLink } from "react-router-dom";
 import { SideMenuItem } from "./SideMenuItem";
 import { useAuthStore } from "../../../stores";
+import ButtonLang from "../../LangSwitcher";
+import { useTranslation } from "react-i18next";
 
 interface MenuItem {
   title: string;
@@ -19,42 +21,43 @@ interface MenuItem {
   Icon: IconType;
 }
 
-const menuItems: MenuItem[] = [
-  {
-    title: "Dashboard",
-    subTitle: "Visualizar data",
-    href: "/dashboard",
-    Icon: IoSpeedometerOutline,
-  },
-  {
-    title: "Osos",
-    subTitle: "Manejador de osos",
-    href: "/dashboard/bears",
-    Icon: IoPawOutline,
-  },
-  {
-    title: "Persona",
-    subTitle: "Nombre y apellido",
-    href: "/dashboard/person",
-    Icon: IoAccessibilityOutline,
-  },
-  {
-    title: "Tareas",
-    subTitle: "Listado de tareas",
-    href: "/dashboard/tasks",
-    Icon: IoListOutline,
-  },
-  {
-    title: "Boda",
-    subTitle: "Invitados a la boda",
-    href: "/dashboard/wedding-invitation",
-    Icon: IoHeartOutline,
-  },
-];
-
 export const SideMenu = () => {
+  const { t } = useTranslation();
   const logout = useAuthStore((state) => state.logout);
   const user = useAuthStore((state) => state.user);
+
+  const menuItems: MenuItem[] = [
+    {
+      title: t("sideMenu.dashboard.title"),
+      subTitle: t("sideMenu.dashboard.subTitle"),
+      href: "/dashboard",
+      Icon: IoSpeedometerOutline,
+    },
+    {
+      title: t("sideMenu.bears.title"),
+      subTitle: t("sideMenu.bears.subTitle"),
+      href: "/dashboard/bears",
+      Icon: IoPawOutline,
+    },
+    {
+      title: t("sideMenu.person.title"),
+      subTitle: t("sideMenu.person.subTitle"),
+      href: "/dashboard/person",
+      Icon: IoAccessibilityOutline,
+    },
+    {
+      title: t("sideMenu.tasks.title"),
+      subTitle: t("sideMenu.tasks.subTitle"),
+      href: "/dashboard/tasks",
+      Icon: IoListOutline,
+    },
+    {
+      title: t("sideMenu.wedding.title"),
+      subTitle: t("sideMenu.wedding.subTitle"),
+      href: "/dashboard/wedding-invitation",
+      Icon: IoHeartOutline,
+    },
+  ];
 
   return (
     <div
@@ -63,12 +66,16 @@ export const SideMenu = () => {
     >
       {/* Logo y Título */}
       <div id="logo" className="my-8 px-6">
-        <h1 className="text-3xl font-black text-primary-600 flex items-center gap-2">
-          <IoAnalyticsOutline />
-          <span>Zustand</span>
-        </h1>
+        <div className="flex items-center justify-between">
+  <h1 className="text-3xl font-black text-primary-600 flex items-center gap-2">
+    <IoAnalyticsOutline />
+    <span>Zustand</span>
+  </h1>
+
+  <ButtonLang  />
+</div>
         <p className="text-slate-500 text-sm mt-1 font-medium">
-          Manejador de estado simple.
+          {t("sideMenu.logoSubtitle")}
         </p>
       </div>
 
@@ -78,7 +85,7 @@ export const SideMenu = () => {
         className="px-6 py-6 border-y border-slate-100 mb-4 bg-slate-50/50"
       >
         <p className="text-xs text-slate-400 uppercase font-bold mb-3 tracking-wider">
-          Bienvenido
+          {t("sideMenu.welcome")}
         </p>
         <div className="flex items-center gap-3">
           <img
@@ -88,9 +95,11 @@ export const SideMenu = () => {
           />
           <div>
             <span className="text-sm font-bold text-slate-700 block">
-              {user?.fullName || "Usuario"}
+              {user?.fullName || t("sideMenu.user.defaultName")}
             </span>
-            <span className="text-xs text-slate-500 block">Developer</span>
+            <span className="text-xs text-slate-500 block">
+              {t("sideMenu.user.role")}
+            </span>
           </div>
         </div>
       </div>
@@ -110,7 +119,7 @@ export const SideMenu = () => {
           className="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-xl transition-colors duration-200 font-medium"
         >
           <IoLogOutOutline className="text-2xl" />
-          <span className="text-base">Cerrar Sesión</span>
+          <span className="text-base">{t("sideMenu.logout")}</span>
         </NavLink>
       </div>
     </div>

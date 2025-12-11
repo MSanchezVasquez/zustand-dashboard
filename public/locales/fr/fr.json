@@ -1,0 +1,76 @@
+{
+  "dashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Aperçu général de tous les états du système.",
+
+    "totalBears": {
+      "label": "Nombre Total d’Ours"
+    },
+
+    "person": {
+      "label": "Personne",
+      "noName": "Sans Nom"
+    },
+
+    "tasks": {
+      "label": "Tâches Actives"
+    },
+
+    "wedding": {
+      "label": "Événement Mariage",
+      "comingSoon": "Bientôt disponible"
+    },
+
+    "user": {
+      "label": "Utilisateur Actuel",
+      "unknown": "Inconnu"
+    }
+  },"sideMenu": {
+    "dashboard": { "title": "Tableau de bord", "subTitle": "Voir les données" },
+    "bears": { "title": "Ours", "subTitle": "Gérer les ours" },
+    "person": { "title": "Personne", "subTitle": "Prénom et nom" },
+    "tasks": { "title": "Tâches", "subTitle": "Liste des tâches" },
+    "wedding": { "title": "Mariage", "subTitle": "Invités du mariage" },
+    "logoSubtitle": "Gestionnaire d'état simple.",
+    "welcome": "Bienvenue",
+    "user": { "defaultName": "Utilisateur", "role": "Développeur" },
+    "logout": "Se déconnecter"
+  },  "wedding": {
+    "title": "Invitation de mariage",
+    "desc": "Zustand divisé en slices",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "guests": "Combien d'invités apporterez-vous ?",
+    "eventDate": "Date de l'événement",
+    "eventTime": "Heure de l'événement",
+    "coming": "Viendrez-vous aussi ?",
+    "yes": "Oui",
+    "no": "Non",
+    "submit": "Envoyer"
+  },"jira": {
+    "title": "Tâches",
+    "desc": "Gestion d'état avec des objets Zustand",
+    "pending": "En attente",
+    "inprogress": "En cours",
+    "done": "Terminées"
+  },  "person": {
+    "title": "Personne",
+    "desc": "Informations partagées avec un autre store, le Session Storage et Firebase",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "firstNamePlaceholder": "Prénom",
+    "lastNamePlaceholder": "Nom"
+  },"bears": {
+    "title": "Compteur d’Ours",
+    "desc": "Gestion d'état simple avec Zustand",
+    "black": "Ours Noirs",
+    "polar": "Ours Polaires",
+    "panda": "Pandas",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Ours",
+    "doNothing": "Ne Rien Faire",
+    "addBear": "Ajouter un Ours",
+    "clear": "Effacer les Ours"
+  }
+}

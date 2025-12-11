@@ -1,8 +1,11 @@
 import { useMemo } from "react";
 import { JiraTasks } from "../../components";
 import { useTaskStore } from "../../stores";
+import { useTranslation } from "react-i18next";
 
 export const JiraPage = () => {
+  const { t } = useTranslation();
+
   const tasks = useTaskStore((state) => state.tasks);
 
   const pendingTasks = useMemo(
@@ -18,23 +21,22 @@ export const JiraPage = () => {
     [tasks]
   );
 
-  console.log({ pendingTasks, inProgressTasks, doneTasks });
   return (
     <>
-      <h1>Tareas</h1>
-      <p>Manejo de estado con objectos de Zustand</p>
+      <h1>{t("jira.title")}</h1>
+      <p>{t("jira.desc")}</p>
       <hr />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <JiraTasks title="Pendientes" tasks={pendingTasks} status="open" />
+        <JiraTasks title={t("jira.pending")} tasks={pendingTasks} status="open" />
 
         <JiraTasks
-          title="Avanzando"
+          title={t("jira.inprogress")}
           tasks={inProgressTasks}
           status="in-progress"
         />
 
-        <JiraTasks title="Terminadas" tasks={doneTasks} status="done" />
+        <JiraTasks title={t("jira.done")} tasks={doneTasks} status="done" />
       </div>
     </>
   );

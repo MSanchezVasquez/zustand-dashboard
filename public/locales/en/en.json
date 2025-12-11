@@ -1,0 +1,80 @@
+{
+  
+  "sideMenu": {
+    "dashboard": { "title": "Dashboard", "subTitle": "View data" },
+    "bears": { "title": "Bears", "subTitle": "Manage bears" },
+    "person": { "title": "Person", "subTitle": "Name and surname" },
+    "tasks": { "title": "Tasks", "subTitle": "Task list" },
+    "wedding": { "title": "Wedding", "subTitle": "Wedding guests" },
+    "logoSubtitle": "Simple state manager.",
+    "welcome": "Welcome",
+    "user": { "defaultName": "User", "role": "Developer" },
+    "logout": "Log Out"
+  },
+
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "General overview of all system states.",
+
+    "totalBears": {
+      "label": "Total Bears"
+    },
+
+    "person": {
+      "label": "Person",
+      "noName": "No Name"
+    },
+
+    "tasks": {
+      "label": "Active Tasks"
+    },
+
+    "wedding": {
+      "label": "Wedding Event",
+      "comingSoon": "Coming soon"
+    },
+
+    "user": {
+      "label": "Current User",
+      "unknown": "Unknown"
+    }
+  },"wedding": {
+    "title": "Wedding Invitation",
+    "desc": "Zustand segmented into slices",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "guests": "How many guests will you bring?",
+    "eventDate": "Event Date",
+    "eventTime": "Event Time",
+    "coming": "Will you come too?",
+    "yes": "Yes",
+    "no": "No",
+    "submit": "Submit"
+  },"jira": {
+    "title": "Tasks",
+    "desc": "State management using Zustand objects",
+    "pending": "Pending",
+    "inprogress": "In Progress",
+    "done": "Completed"
+  },  "person": {
+    "title": "Person",
+    "desc": "Information that will be shared with another store, Session Storage and Firebase",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name"
+  },  "bears": {
+    "title": "Bear Counter",
+    "desc": "Simple Zustand state management",
+    "black": "Black Bears",
+    "polar": "Polar Bears",
+    "panda": "Panda Bears",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Bears",
+    "doNothing": "Do Nothing",
+    "addBear": "Add Bear",
+    "clear": "Clear Bears"
+  }
+  
+}

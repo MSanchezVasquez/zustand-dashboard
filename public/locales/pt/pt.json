@@ -1,0 +1,76 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Visão geral de todos os estados do sistema.",
+
+    "totalBears": {
+      "label": "Total de Ursos"
+    },
+
+    "person": {
+      "label": "Pessoa",
+      "noName": "Sem Nome"
+    },
+
+    "tasks": {
+      "label": "Tarefas Ativas"
+    },
+
+    "wedding": {
+      "label": "Evento de Casamento",
+      "comingSoon": "Em breve"
+    },
+
+    "user": {
+      "label": "Usuário Atual",
+      "unknown": "Desconhecido"
+    }
+  }, "sideMenu": {
+    "dashboard": { "title": "Painel", "subTitle": "Visualizar dados" },
+    "bears": { "title": "Ursos", "subTitle": "Gerenciar ursos" },
+    "person": { "title": "Pessoa", "subTitle": "Nome e sobrenome" },
+    "tasks": { "title": "Tarefas", "subTitle": "Lista de tarefas" },
+    "wedding": { "title": "Casamento", "subTitle": "Convidados do casamento" },
+    "logoSubtitle": "Gerenciador de estado simples.",
+    "welcome": "Bem-vindo",
+    "user": { "defaultName": "Usuário", "role": "Desenvolvedor" },
+    "logout": "Sair"
+  },  "wedding": {
+    "title": "Convite de Casamento",
+    "desc": "Zustand dividido em slices",
+    "firstName": "Primeiro Nome",
+    "lastName": "Sobrenome",
+    "guests": "Quantos convidados você trará?",
+    "eventDate": "Data do evento",
+    "eventTime": "Hora do evento",
+    "coming": "Você também virá?",
+    "yes": "Sim",
+    "no": "Não",
+    "submit": "Enviar"
+  },"jira": {
+    "title": "Tarefas",
+    "desc": "Gerenciamento de estado com objetos Zustand",
+    "pending": "Pendentes",
+    "inprogress": "Em andamento",
+    "done": "Concluídas"
+  },"person": {
+    "title": "Pessoa",
+    "desc": "Informações que serão compartilhadas com outra store, Session Storage e Firebase",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "firstNamePlaceholder": "Primeiro nome",
+    "lastNamePlaceholder": "Sobrenome"
+  },"bears": {
+    "title": "Contador de Ursos",
+    "desc": "Gerenciamento de estado simples com Zustand",
+    "black": "Ursos Negros",
+    "polar": "Ursos Polares",
+    "panda": "Pandas",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Ursos",
+    "doNothing": "Não Fazer Nada",
+    "addBear": "Adicionar Urso",
+    "clear": "Limpar Ursos"
+  }
+}

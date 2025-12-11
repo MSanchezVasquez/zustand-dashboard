@@ -1,0 +1,76 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Panoramica generale di tutti gli stati del sistema.",
+
+    "totalBears": {
+      "label": "Orsi Totali"
+    },
+
+    "person": {
+      "label": "Persona",
+      "noName": "Senza Nome"
+    },
+
+    "tasks": {
+      "label": "Attività Attive"
+    },
+
+    "wedding": {
+      "label": "Evento Matrimonio",
+      "comingSoon": "In arrivo"
+    },
+
+    "user": {
+      "label": "Utente Attuale",
+      "unknown": "Sconosciuto"
+    }
+  },"sideMenu": {
+    "dashboard": { "title": "Dashboard", "subTitle": "Visualizza dati" },
+    "bears": { "title": "Orsi", "subTitle": "Gestisci orsi" },
+    "person": { "title": "Persona", "subTitle": "Nome e cognome" },
+    "tasks": { "title": "Compiti", "subTitle": "Elenco dei compiti" },
+    "wedding": { "title": "Matrimonio", "subTitle": "Invitati al matrimonio" },
+    "logoSubtitle": "Gestore di stato semplice.",
+    "welcome": "Benvenuto",
+    "user": { "defaultName": "Utente", "role": "Sviluppatore" },
+    "logout": "Disconnettersi"
+  }, "wedding": {
+    "title": "Invito di nozze",
+    "desc": "Zustand suddiviso in slices",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "guests": "Quanti invitati porterai?",
+    "eventDate": "Data dell'evento",
+    "eventTime": "Ora dell'evento",
+    "coming": "Verrai anche tu?",
+    "yes": "Sì",
+    "no": "No",
+    "submit": "Invia"
+  },"jira": {
+    "title": "Compiti",
+    "desc": "Gestione dello stato con oggetti Zustand",
+    "pending": "In attesa",
+    "inprogress": "In corso",
+    "done": "Completate"
+  },"person": {
+    "title": "Persona",
+    "desc": "Informazioni condivise con un altro store, Session Storage e Firebase",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "firstNamePlaceholder": "Nome",
+    "lastNamePlaceholder": "Cognome"
+  }, "bears": {
+    "title": "Contatore di Orsi",
+    "desc": "Gestione dello stato semplice con Zustand",
+    "black": "Orsi Neri",
+    "polar": "Orsi Polari",
+    "panda": "Panda",
+    "add": "+1",
+    "remove": "-1",
+    "allTitle": "Orsi",
+    "doNothing": "Non Fare Nulla",
+    "addBear": "Aggiungi Orso",
+    "clear": "Cancella Orsi"
+  }
+}
