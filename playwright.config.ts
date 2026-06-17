@@ -1,20 +1,31 @@
 import { defineConfig } from "@playwright/test";
-import { chromaticLightning } from "@chromatic-com/playwright";
 
 export default defineConfig({
-  // Conectamos el plugin oficial de Chromatic para Playwright
-  plugins: [chromaticLightning()],
+  testDir: "./tests",
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: "html",
 
   use: {
-    // URL base por defecto para los entornos de Next.js
-    baseURL: "http://localhost:3000",
+    // URL por defecto donde corre Next.js localmente
+    baseURL: "http://localhost:5173",
     trace: "on-first-retry",
   },
 
-  /* Configuramos Playwright para que levante Next.js automáticamente */
+  /* Configuramos Playwright para que levante Next.js por nosotros antes de los tests */
   webServer: {
-    command: "npm run dev", // o 'pnpm dev' / 'bun dev'
-    url: "http://localhost:3000",
+    command: "npm run dev",
+    url: "http://localhost:5173",
     reuseExistingServer: !process.env.CI,
   },
+
+  /* Configuramos los navegadores que usarás localmente */
+  projects: [
+    {
+      name: "chromium",
+      use: { headless: true }, // Chromatic prefiere modo headless para capturar de fondo
+    },
+  ],
 });

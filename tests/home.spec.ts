@@ -1,4 +1,5 @@
-import { test, expect } from "@playwright/test";
+import { expect } from "@playwright/test";
+import { test } from "@chromatic-com/playwright"; // ✨ Cambias este import
 
 test.describe("Control Visual de la Home", () => {
   test("debe renderizar la página principal correctamente", async ({
