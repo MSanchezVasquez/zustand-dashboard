@@ -21,6 +21,9 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@chromatic-com/playwright": "^0.14.9",
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^25.9.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
