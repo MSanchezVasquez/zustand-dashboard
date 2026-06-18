@@ -1,4 +1,4 @@
-import { defineConfig } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
@@ -24,8 +24,16 @@ export default defineConfig({
   /* Configuramos los navegadores que usarás localmente */
   projects: [
     {
-      name: "chromium",
-      use: { headless: true }, // Chromatic prefiere modo headless para capturar de fondo
+      name: "Desktop Chrome",
+      use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "Mobile Safari",
+      use: { ...devices["iPhone 13"] },
+    },
+    {
+      name: "Tablet",
+      use: { ...devices["iPad Mini"] },
     },
   ],
 });
