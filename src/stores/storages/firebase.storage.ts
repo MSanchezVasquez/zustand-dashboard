@@ -5,14 +5,10 @@ const firebaseUrl =
 
 const storageApi: StateStorage = {
   getItem: async function (name: string): Promise<string | null> {
-    try {
-      const data = await fetch(`${firebaseUrl}/${name}.json`).then((res) =>
-        res.json()
-      );
-      return JSON.stringify(data);
-    } catch (error) {
-      throw error;
-    }
+    const data = await fetch(`${firebaseUrl}/${name}.json`).then((res) =>
+      res.json(),
+    );
+    return JSON.stringify(data);
   },
   setItem: async function (name: string, value: string): Promise<void> {
     await fetch(`${firebaseUrl}/${name}.json`, {
